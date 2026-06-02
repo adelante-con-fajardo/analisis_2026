@@ -135,7 +135,7 @@
     
     <!-- Contenedor del selector -->
     <div class="controles">
-        <label for="selector-departamento">Seleccione un Departamento:</label>
+        <label for="selector-departamento">Seleccione un Territorio:</label>
         <select id="selector-departamento">
             <option value="">-- Seleccionar --</option>
             <!-- Las opciones se llenarán con JavaScript -->
@@ -146,7 +146,7 @@
         <table id="tabla-votos">
             <thead>
                 <tr>
-                    <th>Municipio</th>
+                    <th>Territorio</th>
                     <th>2022</th>
                     <th>2026</th>
                     <th>Cambio (%)</th>
@@ -165,181 +165,225 @@
     <script>
         // 1. Aquí pegas tu JSON maestro completo
         const datosElectorales = {
-            "DEPARTAMENTOS": {
-        "codigo_departamento_csv": "1",
-        "municipios":[
+"COLOMBIA":{
+"codigo_departamento_csv": "1",
+"municipios":[
             {"municipio":
-         "ANTIOQUIA",
+         "COLOMBIA",
+        "votos_csv": 888585,
+        "votos_api": 1006870,
+        "porcentaje_api": "4,25%"
+    }]
+},
+      "DEPARTAMENTOS": {
+        "codigo_departamento_csv": "1",
+        "municipios": [
+    {
+        "municipio": "ANTIOQUIA",
         "votos_csv": 154077,
         "votos_api": 225072,
         "porcentaje_api": "7,09%"
     },
-{"municipio": "ATLANTICO",
+    {
+        "municipio": "ATLANTICO",
         "votos_csv": 23339,
         "votos_api": 27808,
         "porcentaje_api": "2,63%"
     },
-{"municipio": "BOLIVAR",
+    {
+        "municipio": "BOLIVAR",
         "votos_csv": 18156,
         "votos_api": 15690,
         "porcentaje_api": "1,91%"
     },
-{"municipio": "BOYACA",
+    {
+        "municipio": "BOYACA",
         "votos_csv": 23207,
         "votos_api": 28853,
-        "porcentaje_api": 0
+        "porcentaje_api": "4,31%"
     },
-{"municipio": "CALDAS",
+    {
+        "municipio": "CALDAS",
         "votos_csv": 29658,
-        "votos_api": 26513,
-        "porcentaje_api": 0
+        "votos_api": 26703,
+        "porcentaje_api": "5,43%"
     },
-{"municipio": "CAUCA",
+    {
+        "municipio": "CAUCA",
         "votos_csv": 13760,
         "votos_api": 12037,
-        "porcentaje_api": 0
+        "porcentaje_api": "1,77%"
     },
-{"municipio": "CESAR",
+    {
+        "municipio": "CESAR",
         "votos_csv": 6426,
         "votos_api": 8174,
-        "porcentaje_api": 0
+        "porcentaje_api": "1,69%"
     },
-{"municipio": "CORDOBA",
+    {
+        "municipio": "CORDOBA",
         "votos_csv": 9756,
         "votos_api": 8325,
-        "porcentaje_api": 0
+        "porcentaje_api": "1,18%"
     },
-{"municipio": "CUNDINAMARCA",
+    {
+        "municipio": "CUNDINAMARCA",
         "votos_csv": 53539,
-        "votos_api": 71787,
-        "porcentaje_api": 0
+        "votos_api": 71750,
+        "porcentaje_api": "4,48%"
     },
-{"municipio": "BOGOTA D.C.",
+    {
+        "municipio": "BOGOTA D.C.",
         "votos_csv": 299050,
         "votos_api": 258410,
         "porcentaje_api": "6,31%"
     },
-{"municipio": "CHOCO",
+    {
+        "municipio": "CHOCO",
         "votos_csv": 3741,
-        "votos_api": 1140,
-        "porcentaje_api": 0
+        "votos_api": 1203,
+        "porcentaje_api": "0,83%"
     },
-{"municipio": "HUILA",
+    {
+        "municipio": "HUILA",
         "votos_csv": 9586,
         "votos_api": 14601,
-        "porcentaje_api": 0
+        "porcentaje_api": "2,66%"
     },
-{"municipio": "MAGDALENA",
+    {
+        "municipio": "MAGDALENA",
         "votos_csv": 8777,
         "votos_api": 7934,
-        "porcentaje_api": 0
+        "porcentaje_api": "1,57%"
     },
-{"municipio": "NARIÑO",
+    {
+        "municipio": "NARIÑO",
         "votos_csv": 14579,
         "votos_api": 13039,
-        "porcentaje_api": 0
+        "porcentaje_api": "1,89%"
     },
-{"municipio": "RISARALDA",
+    {
+        "municipio": "RISARALDA",
         "votos_csv": 22579,
         "votos_api": 26474,
-        "porcentaje_api": 0
+        "porcentaje_api": "5,23%"
     },
-{"municipio": "NORTE DE SAN",
+    {
+        "municipio": "NORTE DE SAN",
         "votos_csv": 15928,
-        "votos_api": 28755,
-        "porcentaje_api": 0
+        "votos_api": 28757,
+        "porcentaje_api": "3,91%"
     },
-{"municipio": "QUINDIO",
+    {
+        "municipio": "QUINDIO",
         "votos_csv": 13827,
         "votos_api": 15663,
-        "porcentaje_api": 0
+        "porcentaje_api": "5,33%"
     },
-{"municipio": "SANTANDER",
+    {
+        "municipio": "SANTANDER",
         "votos_csv": 13801,
-        "votos_api": 47287,
-        "porcentaje_api": 0
+        "votos_api": 47252,
+        "porcentaje_api": "3,94%"
     },
-{"municipio": "SUCRE",
+    {
+        "municipio": "SUCRE",
         "votos_csv": 5901,
         "votos_api": 4355,
-        "porcentaje_api": 0
+        "porcentaje_api": "1,08%"
     },
-{"municipio": "TOLIMA",
+    {
+        "municipio": "TOLIMA",
         "votos_csv": 18452,
         "votos_api": 20298,
-        "porcentaje_api": 0
+        "porcentaje_api": "3,01%"
     },
-{"municipio": "VALLE",
+    {
+        "municipio": "VALLE",
         "votos_csv": 77622,
         "votos_api": 77283,
-        "porcentaje_api": 0
+        "porcentaje_api": "3,66%"
     },
-{"municipio": "ARAUCA",
+    {
+        "municipio": "ARAUCA",
         "votos_csv": 1678,
         "votos_api": 2313,
         "porcentaje_api": "2,34%"
     },
-{"municipio": "CAQUETA",
+    {
+        "municipio": "CAQUETA",
         "votos_csv": 2744,
         "votos_api": 4048,
-        "porcentaje_api": 0
+        "porcentaje_api": "2,36%"
     },
-{"municipio": "CASANARE",
+    {
+        "municipio": "CASANARE",
         "votos_csv": 2934,
         "votos_api": 6028,
-        "porcentaje_api": 0
+        "porcentaje_api": "2,75%"
     },
-{"municipio": "LA GUAJIRA",
+    {
+        "municipio": "LA GUAJIRA",
         "votos_csv": 3361,
         "votos_api": 2946,
-        "porcentaje_api": 0
+        "porcentaje_api": "1,15%"
     },
-{"municipio": "GUAINIA",
+    {
+        "municipio": "GUAINIA",
         "votos_csv": 527,
-        "votos_api": 178,
-        "porcentaje_api": 0
+        "votos_api": 188,
+        "porcentaje_api": "1,56%"
     },
-{"municipio": "META",
+    {
+        "municipio": "META",
         "votos_csv": 10297,
         "votos_api": 17768,
-        "porcentaje_api": 0
+        "porcentaje_api": "3,30%"
     },
-{"municipio": "GUAVIARE",
+    {
+        "municipio": "GUAVIARE",
         "votos_csv": 575,
         "votos_api": 835,
-        "porcentaje_api": 0
+        "porcentaje_api": "2,45%"
     },
-{"municipio": "SAN ANDRES",
+    {
+        "municipio": "SAN ANDRES",
         "votos_csv": 573,
-        "votos_api": 90,
-        "porcentaje_api": 0
+        "votos_api": 535,
+        "porcentaje_api": "5,35%"
     },
-{"municipio": "AMAZONAS",
+    {
+        "municipio": "AMAZONAS",
         "votos_csv": 749,
         "votos_api": 494,
         "porcentaje_api": "1,95%"
     },
-{"municipio": "PUTUMAYO",
+    {
+        "municipio": "PUTUMAYO",
         "votos_csv": 2017,
         "votos_api": 2131,
-        "porcentaje_api": 0
+        "porcentaje_api": "1,61%"
     },
-{"municipio": "VAUPES",
+    {
+        "municipio": "VAUPES",
         "votos_csv": 253,
         "votos_api": 147,
-        "porcentaje_api": 0
+        "porcentaje_api": "1,60%"
     },
-{"municipio": "VICHADA",
+    {
+        "municipio": "VICHADA",
         "votos_csv": 553,
         "votos_api": 293,
-        "porcentaje_api": 0
+        "porcentaje_api": "1,37%"
     },
-{"municipio": " CONSULADOS",
+    {
+        "municipio": " CONSULADOS",
         "votos_csv": 23269,
-        "votos_api": 31660,
-        "porcentaje_api": 0
-    }]},
-    "ANTIOQUIA": {
+        "votos_api": 31666,
+        "porcentaje_api": "5,38%"
+    }
+]},
+"ANTIOQUIA": {
         "codigo_departamento_csv": "1",
         "municipios": [
             {
@@ -873,8 +917,8 @@
             {
                 "municipio": "SAN ANDRES",
                 "votos_csv": 106,
-                "votos_api": "535",
-                "porcentaje_api": "2,97%"
+                "votos_api": "100",
+                "porcentaje_api": "4,47%"
             },
             {
                 "municipio": "SAN CARLOS",
@@ -5542,8 +5586,8 @@
             {
                 "municipio": "SAN ANDRES",
                 "votos_csv": 33,
-                "votos_api": "100",
-                "porcentaje_api": "4,47%"
+                "votos_api": "66",
+                "porcentaje_api": "1,73%"
             },
             {
                 "municipio": "SAN BENITO",
@@ -6995,8 +7039,8 @@
             {
                 "municipio": "SAN ANDRES",
                 "votos_csv": 543,
-                "votos_api": "66",
-                "porcentaje_api": "1,73%"
+                "votos_api": "511",
+                "porcentaje_api": "5,04%"
             },
             {
                 "municipio": "PROVIDENCIA",
@@ -7663,7 +7707,7 @@
             tbody.innerHTML = ''; // Limpiar la tabla
 
             if (!departamentoSeleccionado) {
-                tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #666;">Seleccione un departamento para ver los resultados.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #666;">Seleccione un territorio para ver los resultados.</td></tr>';
                 return;
             }
 
