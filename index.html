@@ -67,7 +67,7 @@
         }
 
         th, td {
-            padding: 12px 15px;
+            padding: 6px 7px;
             border-bottom: 1px solid #ddd;
         }
 
@@ -111,7 +111,7 @@
                 font-size: 1.2rem;
             }
             th, td {
-                padding: 8px 6px;
+                padding: 4px 3px;
                 font-size: 0.85em; /* Letra general más pequeña */
             }
             /* Municipio aún más pequeño en celular para que quepa bien */
@@ -147,10 +147,10 @@
             <thead>
                 <tr>
                     <th>Municipio</th>
-                    <th>Votos 2022</th>
-                    <th>Votos 2026</th>
+                    <th>2022</th>
+                    <th>2026</th>
+                    <th>Cambio (%)</th>
                     <th>% 2026</th>
-                    <th>Variación (%)</th>
                 </tr>
             </thead>
             <tbody id="tabla-body">
@@ -165,6 +165,180 @@
     <script>
         // 1. Aquí pegas tu JSON maestro completo
         const datosElectorales = {
+            "DEPARTAMENTOS": {
+        "codigo_departamento_csv": "1",
+        "municipios":[
+            {"municipio":
+         "ANTIOQUIA",
+        "votos_csv": 154077,
+        "votos_api": 225072,
+        "porcentaje_api": "7,09%"
+    },
+{"municipio": "ATLANTICO",
+        "votos_csv": 23339,
+        "votos_api": 27808,
+        "porcentaje_api": "2,63%"
+    },
+{"municipio": "BOLIVAR",
+        "votos_csv": 18156,
+        "votos_api": 15690,
+        "porcentaje_api": "1,91%"
+    },
+{"municipio": "BOYACA",
+        "votos_csv": 23207,
+        "votos_api": 28853,
+        "porcentaje_api": 0
+    },
+{"municipio": "CALDAS",
+        "votos_csv": 29658,
+        "votos_api": 26513,
+        "porcentaje_api": 0
+    },
+{"municipio": "CAUCA",
+        "votos_csv": 13760,
+        "votos_api": 12037,
+        "porcentaje_api": 0
+    },
+{"municipio": "CESAR",
+        "votos_csv": 6426,
+        "votos_api": 8174,
+        "porcentaje_api": 0
+    },
+{"municipio": "CORDOBA",
+        "votos_csv": 9756,
+        "votos_api": 8325,
+        "porcentaje_api": 0
+    },
+{"municipio": "CUNDINAMARCA",
+        "votos_csv": 53539,
+        "votos_api": 71787,
+        "porcentaje_api": 0
+    },
+{"municipio": "BOGOTA D.C.",
+        "votos_csv": 299050,
+        "votos_api": 258410,
+        "porcentaje_api": "6,31%"
+    },
+{"municipio": "CHOCO",
+        "votos_csv": 3741,
+        "votos_api": 1140,
+        "porcentaje_api": 0
+    },
+{"municipio": "HUILA",
+        "votos_csv": 9586,
+        "votos_api": 14601,
+        "porcentaje_api": 0
+    },
+{"municipio": "MAGDALENA",
+        "votos_csv": 8777,
+        "votos_api": 7934,
+        "porcentaje_api": 0
+    },
+{"municipio": "NARIÑO",
+        "votos_csv": 14579,
+        "votos_api": 13039,
+        "porcentaje_api": 0
+    },
+{"municipio": "RISARALDA",
+        "votos_csv": 22579,
+        "votos_api": 26474,
+        "porcentaje_api": 0
+    },
+{"municipio": "NORTE DE SAN",
+        "votos_csv": 15928,
+        "votos_api": 28755,
+        "porcentaje_api": 0
+    },
+{"municipio": "QUINDIO",
+        "votos_csv": 13827,
+        "votos_api": 15663,
+        "porcentaje_api": 0
+    },
+{"municipio": "SANTANDER",
+        "votos_csv": 13801,
+        "votos_api": 47287,
+        "porcentaje_api": 0
+    },
+{"municipio": "SUCRE",
+        "votos_csv": 5901,
+        "votos_api": 4355,
+        "porcentaje_api": 0
+    },
+{"municipio": "TOLIMA",
+        "votos_csv": 18452,
+        "votos_api": 20298,
+        "porcentaje_api": 0
+    },
+{"municipio": "VALLE",
+        "votos_csv": 77622,
+        "votos_api": 77283,
+        "porcentaje_api": 0
+    },
+{"municipio": "ARAUCA",
+        "votos_csv": 1678,
+        "votos_api": 2313,
+        "porcentaje_api": "2,34%"
+    },
+{"municipio": "CAQUETA",
+        "votos_csv": 2744,
+        "votos_api": 4048,
+        "porcentaje_api": 0
+    },
+{"municipio": "CASANARE",
+        "votos_csv": 2934,
+        "votos_api": 6028,
+        "porcentaje_api": 0
+    },
+{"municipio": "LA GUAJIRA",
+        "votos_csv": 3361,
+        "votos_api": 2946,
+        "porcentaje_api": 0
+    },
+{"municipio": "GUAINIA",
+        "votos_csv": 527,
+        "votos_api": 178,
+        "porcentaje_api": 0
+    },
+{"municipio": "META",
+        "votos_csv": 10297,
+        "votos_api": 17768,
+        "porcentaje_api": 0
+    },
+{"municipio": "GUAVIARE",
+        "votos_csv": 575,
+        "votos_api": 835,
+        "porcentaje_api": 0
+    },
+{"municipio": "SAN ANDRES",
+        "votos_csv": 573,
+        "votos_api": 90,
+        "porcentaje_api": 0
+    },
+{"municipio": "AMAZONAS",
+        "votos_csv": 749,
+        "votos_api": 494,
+        "porcentaje_api": "1,95%"
+    },
+{"municipio": "PUTUMAYO",
+        "votos_csv": 2017,
+        "votos_api": 2131,
+        "porcentaje_api": 0
+    },
+{"municipio": "VAUPES",
+        "votos_csv": 253,
+        "votos_api": 147,
+        "porcentaje_api": 0
+    },
+{"municipio": "VICHADA",
+        "votos_csv": 553,
+        "votos_api": 293,
+        "porcentaje_api": 0
+    },
+{"municipio": " CONSULADOS",
+        "votos_csv": 23269,
+        "votos_api": 31660,
+        "porcentaje_api": 0
+    }]},
     "ANTIOQUIA": {
         "codigo_departamento_csv": "1",
         "municipios": [
@@ -255,20 +429,20 @@
             {
                 "municipio": "ARGELIA",
                 "votos_csv": 82,
-                "votos_api": "4",
-                "porcentaje_api": "50,00%"
+                "votos_api": "56",
+                "porcentaje_api": "1,76%"
             },
             {
                 "municipio": "ARMENIA",
                 "votos_csv": 65,
-                "votos_api": "10696",
-                "porcentaje_api": "6,30%"
+                "votos_api": "55",
+                "porcentaje_api": "2,43%"
             },
             {
                 "municipio": "BARBOSA",
                 "votos_csv": 1086,
-                "votos_api": "457",
-                "porcentaje_api": "2,69%"
+                "votos_api": "1365",
+                "porcentaje_api": "5,69%"
             },
             {
                 "municipio": "BELMIRA",
@@ -291,14 +465,14 @@
             {
                 "municipio": "BETULIA",
                 "votos_csv": 201,
-                "votos_api": "56",
-                "porcentaje_api": "2,07%"
+                "votos_api": "147",
+                "porcentaje_api": "2,62%"
             },
             {
                 "municipio": "BOLIVAR",
                 "votos_csv": 408,
-                "votos_api": "126",
-                "porcentaje_api": "1,75%"
+                "votos_api": "333",
+                "porcentaje_api": "2,83%"
             },
             {
                 "municipio": "BURITICA",
@@ -309,8 +483,8 @@
             {
                 "municipio": "BRICEÑO",
                 "votos_csv": 70,
-                "votos_api": "13",
-                "porcentaje_api": "0,90%"
+                "votos_api": "62",
+                "porcentaje_api": "3,41%"
             },
             {
                 "municipio": "CACERES",
@@ -327,8 +501,8 @@
             {
                 "municipio": "CALDAS",
                 "votos_csv": 2521,
-                "votos_api": "49",
-                "porcentaje_api": "2,55%"
+                "votos_api": "4322",
+                "porcentaje_api": "9,27%"
             },
             {
                 "municipio": "CAMPAMENTO",
@@ -393,14 +567,14 @@
             {
                 "municipio": "CONCEPCION",
                 "votos_csv": 86,
-                "votos_api": "60",
-                "porcentaje_api": "1,95%"
+                "votos_api": "101",
+                "porcentaje_api": "3,71%"
             },
             {
                 "municipio": "CONCORDIA",
                 "votos_csv": 176,
-                "votos_api": "25",
-                "porcentaje_api": "0,56%"
+                "votos_api": "154",
+                "porcentaje_api": "2,27%"
             },
             {
                 "municipio": "COPACABANA",
@@ -483,14 +657,14 @@
             {
                 "municipio": "GRANADA",
                 "votos_csv": 229,
-                "votos_api": "871",
-                "porcentaje_api": "2,45%"
+                "votos_api": "178",
+                "porcentaje_api": "3,01%"
             },
             {
                 "municipio": "GUADALUPE",
                 "votos_csv": 82,
-                "votos_api": "34",
-                "porcentaje_api": "1,19%"
+                "votos_api": "77",
+                "porcentaje_api": "3,41%"
             },
             {
                 "municipio": "GUARNE",
@@ -537,8 +711,8 @@
             {
                 "municipio": "JERICO",
                 "votos_csv": 277,
-                "votos_api": "12",
-                "porcentaje_api": "0,67%"
+                "votos_api": "255",
+                "porcentaje_api": "3,69%"
             },
             {
                 "municipio": "LA CEJA",
@@ -561,8 +735,8 @@
             {
                 "municipio": "LA UNION",
                 "votos_csv": 716,
-                "votos_api": "601",
-                "porcentaje_api": "3,72%"
+                "votos_api": "1276",
+                "porcentaje_api": "9,17%"
             },
             {
                 "municipio": "LA PINTADA",
@@ -609,8 +783,8 @@
             {
                 "municipio": "NARIÑO",
                 "votos_csv": 152,
-                "votos_api": "64",
-                "porcentaje_api": "1,89%"
+                "votos_api": "60",
+                "porcentaje_api": "1,60%"
             },
             {
                 "municipio": "NECHI",
@@ -675,14 +849,14 @@
             {
                 "municipio": "RIONEGRO",
                 "votos_csv": 4713,
-                "votos_api": "300",
-                "porcentaje_api": "2,09%"
+                "votos_api": "7243",
+                "porcentaje_api": "7,26%"
             },
             {
                 "municipio": "SABANALARGA",
                 "votos_csv": 107,
-                "votos_api": "33",
-                "porcentaje_api": "1,66%"
+                "votos_api": "70",
+                "porcentaje_api": "1,99%"
             },
             {
                 "municipio": "SABANETA",
@@ -699,20 +873,20 @@
             {
                 "municipio": "SAN ANDRES",
                 "votos_csv": 106,
-                "votos_api": "511",
-                "porcentaje_api": "3,04%"
+                "votos_api": "535",
+                "porcentaje_api": "2,97%"
             },
             {
                 "municipio": "SAN CARLOS",
                 "votos_csv": 318,
-                "votos_api": "73",
-                "porcentaje_api": "0,77%"
+                "votos_api": "284",
+                "porcentaje_api": "3,25%"
             },
             {
                 "municipio": "SAN FRANCISCO",
                 "votos_csv": 162,
-                "votos_api": "51",
-                "porcentaje_api": "1,75%"
+                "votos_api": "94",
+                "porcentaje_api": "3,37%"
             },
             {
                 "municipio": "SAN JERONIMO",
@@ -735,14 +909,14 @@
             {
                 "municipio": "SAN LUIS",
                 "votos_csv": 189,
-                "votos_api": "85",
-                "porcentaje_api": "1,17%"
+                "votos_api": "264",
+                "porcentaje_api": "3,88%"
             },
             {
                 "municipio": "SAN PEDRO",
                 "votos_csv": 533,
-                "votos_api": "157",
-                "porcentaje_api": "1,90%"
+                "votos_api": "1080",
+                "porcentaje_api": "7,34%"
             },
             {
                 "municipio": "SAN PEDRO DE URABA",
@@ -771,8 +945,8 @@
             {
                 "municipio": "SANTA BARBARA",
                 "votos_csv": 525,
-                "votos_api": "16",
-                "porcentaje_api": "1,03%"
+                "votos_api": "594",
+                "porcentaje_api": "5,20%"
             },
             {
                 "municipio": "SANTA ROSA DE OSOS",
@@ -789,8 +963,8 @@
             {
                 "municipio": "SANTUARIO",
                 "votos_csv": 813,
-                "votos_api": "169",
-                "porcentaje_api": "3,08%"
+                "votos_api": "1197",
+                "porcentaje_api": "5,45%"
             },
             {
                 "municipio": "SEGOVIA",
@@ -837,8 +1011,8 @@
             {
                 "municipio": "TOLEDO",
                 "votos_csv": 100,
-                "votos_api": "193",
-                "porcentaje_api": "2,49%"
+                "votos_api": "80",
+                "porcentaje_api": "4,62%"
             },
             {
                 "municipio": "TURBO",
@@ -867,8 +1041,8 @@
             {
                 "municipio": "VALPARAISO",
                 "votos_csv": 84,
-                "votos_api": "41",
-                "porcentaje_api": "1,75%"
+                "votos_api": "78",
+                "porcentaje_api": "2,46%"
             },
             {
                 "municipio": "VEGACHI",
@@ -885,8 +1059,8 @@
             {
                 "municipio": "VENECIA",
                 "votos_csv": 195,
-                "votos_api": "34",
-                "porcentaje_api": "1,56%"
+                "votos_api": "151",
+                "porcentaje_api": "2,66%"
             },
             {
                 "municipio": "YALI",
@@ -944,8 +1118,8 @@
             {
                 "municipio": "CANDELARIA",
                 "votos_csv": 104,
-                "votos_api": "1307",
-                "porcentaje_api": "2,41%"
+                "votos_api": "44",
+                "porcentaje_api": "0,77%"
             },
             {
                 "municipio": "GALAPA",
@@ -1004,8 +1178,8 @@
             {
                 "municipio": "PUERTO COLOMBIA",
                 "votos_csv": 551,
-                "votos_api": "3",
-                "porcentaje_api": "1,32%"
+                "votos_api": "584",
+                "porcentaje_api": "2,70%"
             },
             {
                 "municipio": "REPELON",
@@ -1022,8 +1196,8 @@
             {
                 "municipio": "SABANALARGA",
                 "votos_csv": 584,
-                "votos_api": "33",
-                "porcentaje_api": "1,66%"
+                "votos_api": "491",
+                "porcentaje_api": "1,25%"
             },
             {
                 "municipio": "SANTA LUCIA",
@@ -1111,8 +1285,8 @@
             {
                 "municipio": "CALAMAR",
                 "votos_csv": 177,
-                "votos_api": "57",
-                "porcentaje_api": "1,85%"
+                "votos_api": "50",
+                "porcentaje_api": "0,61%"
             },
             {
                 "municipio": "CANTAGALLO",
@@ -1129,8 +1303,8 @@
             {
                 "municipio": "CORDOBA",
                 "votos_csv": 100,
-                "votos_api": "63",
-                "porcentaje_api": "2,14%"
+                "votos_api": "27",
+                "porcentaje_api": "0,37%"
             },
             {
                 "municipio": "CLEMENCIA",
@@ -1159,8 +1333,8 @@
             {
                 "municipio": "EL PEÑON",
                 "votos_csv": 58,
-                "votos_api": "14",
-                "porcentaje_api": "0,72%"
+                "votos_api": "6",
+                "porcentaje_api": "0,21%"
             },
             {
                 "municipio": "MAGANGUE",
@@ -1201,8 +1375,8 @@
             {
                 "municipio": "MORALES",
                 "votos_csv": 70,
-                "votos_api": "151",
-                "porcentaje_api": "1,03%"
+                "votos_api": "54",
+                "porcentaje_api": "0,79%"
             },
             {
                 "municipio": "NOROSI",
@@ -1273,8 +1447,8 @@
             {
                 "municipio": "SAN PABLO",
                 "votos_csv": 74,
-                "votos_api": "61",
-                "porcentaje_api": "0,86%"
+                "votos_api": "106",
+                "porcentaje_api": "1,16%"
             },
             {
                 "municipio": "SANTA CATALINA",
@@ -1285,8 +1459,8 @@
             {
                 "municipio": "SANTA ROSA",
                 "votos_csv": 127,
-                "votos_api": "13",
-                "porcentaje_api": "0,61%"
+                "votos_api": "7",
+                "porcentaje_api": "0,93%"
             },
             {
                 "municipio": "SANTA ROSA DEL SUR",
@@ -1333,8 +1507,8 @@
             {
                 "municipio": "VILLANUEVA",
                 "votos_csv": 134,
-                "votos_api": "148",
-                "porcentaje_api": "1,48%"
+                "votos_api": "66",
+                "porcentaje_api": "0,89%"
             },
             {
                 "municipio": "ZAMBRANO",
@@ -1374,8 +1548,8 @@
             {
                 "municipio": "BELEN",
                 "votos_csv": 135,
-                "votos_api": "43",
-                "porcentaje_api": "1,39%"
+                "votos_api": "162",
+                "porcentaje_api": "3,60%"
             },
             {
                 "municipio": "BERBEO",
@@ -1410,8 +1584,8 @@
             {
                 "municipio": "BUENAVISTA",
                 "votos_csv": 29,
-                "votos_api": "38",
-                "porcentaje_api": "0,73%"
+                "votos_api": "35",
+                "porcentaje_api": "1,13%"
             },
             {
                 "municipio": "BUSBANZA",
@@ -1644,8 +1818,8 @@
             {
                 "municipio": "LA VICTORIA",
                 "votos_csv": 16,
-                "votos_api": "0",
-                "porcentaje_api": "0%"
+                "votos_api": "6",
+                "porcentaje_api": "0,83%"
             },
             {
                 "municipio": "VILLA DE LEIVA",
@@ -1668,8 +1842,8 @@
             {
                 "municipio": "MIRAFLORES",
                 "votos_csv": 135,
-                "votos_api": "15",
-                "porcentaje_api": "1,32%"
+                "votos_api": "115",
+                "porcentaje_api": "2,28%"
             },
             {
                 "municipio": "MONGUA",
@@ -1878,8 +2052,8 @@
             {
                 "municipio": "SANTA MARIA",
                 "votos_csv": 54,
-                "votos_api": "104",
-                "porcentaje_api": "2,01%"
+                "votos_api": "48",
+                "porcentaje_api": "2,51%"
             },
             {
                 "municipio": "SANTA ROSA DE VITERBO",
@@ -2189,8 +2363,8 @@
             {
                 "municipio": "PALESTINA",
                 "votos_csv": 209,
-                "votos_api": "85",
-                "porcentaje_api": "1,43%"
+                "votos_api": "195",
+                "porcentaje_api": "2,54%"
             },
             {
                 "municipio": "PENSILVANIA",
@@ -2201,8 +2375,8 @@
             {
                 "municipio": "RIOSUCIO",
                 "votos_csv": 761,
-                "votos_api": "34",
-                "porcentaje_api": "0,58%"
+                "votos_api": "586",
+                "porcentaje_api": "2,48%"
             },
             {
                 "municipio": "RISARALDA",
@@ -2272,20 +2446,20 @@
             {
                 "municipio": "ARGELIA",
                 "votos_csv": 92,
-                "votos_api": "4",
-                "porcentaje_api": "50,00%"
+                "votos_api": "119",
+                "porcentaje_api": "0,75%"
             },
             {
                 "municipio": "BALBOA",
                 "votos_csv": 132,
-                "votos_api": "92",
-                "porcentaje_api": "3,09%"
+                "votos_api": "121",
+                "porcentaje_api": "0,87%"
             },
             {
                 "municipio": "BOLIVAR",
                 "votos_csv": 155,
-                "votos_api": "126",
-                "porcentaje_api": "1,75%"
+                "votos_api": "69",
+                "porcentaje_api": "0,38"
             },
             {
                 "municipio": "BUENOS AIRES",
@@ -2320,14 +2494,14 @@
             {
                 "municipio": "EL TAMBO",
                 "votos_csv": 576,
-                "votos_api": "121",
-                "porcentaje_api": "1,58%"
+                "votos_api": "371",
+                "porcentaje_api": "1,34%"
             },
             {
                 "municipio": "FLORENCIA",
                 "votos_csv": 37,
-                "votos_api": "2590",
-                "porcentaje_api": "3,30%"
+                "votos_api": "25",
+                "porcentaje_api": "0,75%"
             },
             {
                 "municipio": "GUAPI",
@@ -2362,8 +2536,8 @@
             {
                 "municipio": "LA VEGA",
                 "votos_csv": 87,
-                "votos_api": "285",
-                "porcentaje_api": "2,98%"
+                "votos_api": "31",
+                "porcentaje_api": "0,36%"
             },
             {
                 "municipio": "LOPEZ (MICAY)",
@@ -2470,14 +2644,14 @@
             {
                 "municipio": "SUCRE",
                 "votos_csv": 17,
-                "votos_api": "38",
-                "porcentaje_api": "0,39%"
+                "votos_api": "24",
+                "porcentaje_api": "0,61%"
             },
             {
                 "municipio": "SUAREZ",
                 "votos_csv": 144,
-                "votos_api": "28",
-                "porcentaje_api": "1,03%"
+                "votos_api": "140",
+                "porcentaje_api": "1,32%"
             },
             {
                 "municipio": "TIMBIO",
@@ -2643,8 +2817,8 @@
             {
                 "municipio": "LA PAZ",
                 "votos_csv": 137,
-                "votos_api": "30",
-                "porcentaje_api": "1,38%"
+                "votos_api": "141",
+                "porcentaje_api": "1,26%"
             },
             {
                 "municipio": "SAN DIEGO",
@@ -2684,8 +2858,8 @@
             {
                 "municipio": "BUENAVISTA",
                 "votos_csv": 154,
-                "votos_api": "38",
-                "porcentaje_api": "0,73%"
+                "votos_api": "76",
+                "porcentaje_api": "0,84%"
             },
             {
                 "municipio": "CANALETE",
@@ -2714,8 +2888,8 @@
             {
                 "municipio": "CHIMA",
                 "votos_csv": 69,
-                "votos_api": "20",
-                "porcentaje_api": "1,23%"
+                "votos_api": "30",
+                "porcentaje_api": "0,42%"
             },
             {
                 "municipio": "CHINU",
@@ -2905,8 +3079,8 @@
             {
                 "municipio": "CABRERA",
                 "votos_csv": 25,
-                "votos_api": "16",
-                "porcentaje_api": "1,36%"
+                "votos_api": "13",
+                "porcentaje_api": "0,65%"
             },
             {
                 "municipio": "CACHIPAY",
@@ -2995,8 +3169,8 @@
             {
                 "municipio": "EL PEÑON",
                 "votos_csv": 54,
-                "votos_api": "14",
-                "porcentaje_api": "0,72%"
+                "votos_api": "36",
+                "porcentaje_api": "1,44%"
             },
             {
                 "municipio": "EL ROSAL",
@@ -3121,8 +3295,8 @@
             {
                 "municipio": "GRANADA",
                 "votos_csv": 74,
-                "votos_api": "871",
-                "porcentaje_api": "2,45%"
+                "votos_api": "118",
+                "porcentaje_api": "2,66%"
             },
             {
                 "municipio": "JERUSALEN",
@@ -3199,8 +3373,8 @@
             {
                 "municipio": "MOSQUERA",
                 "votos_csv": 3316,
-                "votos_api": "8",
-                "porcentaje_api": "0,26%"
+                "votos_api": "4563",
+                "porcentaje_api": "6,17%"
             },
             {
                 "municipio": "NARIÑO",
@@ -3301,8 +3475,8 @@
             {
                 "municipio": "RICAURTE",
                 "votos_csv": 180,
-                "votos_api": "51",
-                "porcentaje_api": "0,74%"
+                "votos_api": "205",
+                "porcentaje_api": "2,48%"
             },
             {
                 "municipio": "SAN ANTONIO DEL TEQUENDAMA",
@@ -3313,20 +3487,20 @@
             {
                 "municipio": "SAN BERNARDO",
                 "votos_csv": 99,
-                "votos_api": "59",
-                "porcentaje_api": "1,42%"
+                "votos_api": "104",
+                "porcentaje_api": "2,32%"
             },
             {
                 "municipio": "SAN CAYETANO",
                 "votos_csv": 30,
-                "votos_api": "134",
-                "porcentaje_api": "2,74%"
+                "votos_api": "37",
+                "porcentaje_api": "1,59%"
             },
             {
                 "municipio": "SAN FRANCISCO",
                 "votos_csv": 207,
-                "votos_api": "51",
-                "porcentaje_api": "1,75%"
+                "votos_api": "182",
+                "porcentaje_api": "2,86%"
             },
             {
                 "municipio": "SAN JUAN DE RIOSECO",
@@ -3641,8 +3815,8 @@
             {
                 "municipio": "EL CARMEN",
                 "votos_csv": 93,
-                "votos_api": "93",
-                "porcentaje_api": "1,18%"
+                "votos_api": "106",
+                "porcentaje_api": "2,78%"
             },
             {
                 "municipio": "EL CANTON DEL SAN PABLO (MAN.",
@@ -3832,8 +4006,8 @@
             {
                 "municipio": "GUADALUPE",
                 "votos_csv": 104,
-                "votos_api": "34",
-                "porcentaje_api": "1,19%"
+                "votos_api": "195",
+                "porcentaje_api": "2,42%"
             },
             {
                 "municipio": "HOBO",
@@ -4053,8 +4227,8 @@
             {
                 "municipio": "GUAMAL",
                 "votos_csv": 132,
-                "votos_api": "302",
-                "porcentaje_api": "2,94%"
+                "votos_api": "35",
+                "porcentaje_api": "0,33%"
             },
             {
                 "municipio": "NUEVA GRANADA",
@@ -4232,8 +4406,8 @@
             {
                 "municipio": "CORDOBA",
                 "votos_csv": 78,
-                "votos_api": "63",
-                "porcentaje_api": "2,14%"
+                "votos_api": "48",
+                "porcentaje_api": "0,73%"
             },
             {
                 "municipio": "CUASPUD (CARLOSAMA)",
@@ -4364,8 +4538,8 @@
             {
                 "municipio": "LA UNION",
                 "votos_csv": 211,
-                "votos_api": "601",
-                "porcentaje_api": "3,72%"
+                "votos_api": "221",
+                "porcentaje_api": "1,63%"
             },
             {
                 "municipio": "LEIVA",
@@ -4436,8 +4610,8 @@
             {
                 "municipio": "PROVIDENCIA",
                 "votos_csv": 21,
-                "votos_api": "24",
-                "porcentaje_api": "1,97%"
+                "votos_api": "21",
+                "porcentaje_api": "0,70%"
             },
             {
                 "municipio": "PUERRES",
@@ -4722,8 +4896,8 @@
             {
                 "municipio": "EL CARMEN",
                 "votos_csv": 76,
-                "votos_api": "93",
-                "porcentaje_api": "1,18%"
+                "votos_api": "104",
+                "porcentaje_api": "2,00%"
             },
             {
                 "municipio": "EL ZULIA",
@@ -4806,8 +4980,8 @@
             {
                 "municipio": "PUERTO SANTANDER",
                 "votos_csv": 63,
-                "votos_api": "2",
-                "porcentaje_api": "1,51%"
+                "votos_api": "77",
+                "porcentaje_api": "2,11%"
             },
             {
                 "municipio": "RAGONVALIA",
@@ -4836,8 +5010,8 @@
             {
                 "municipio": "SANTIAGO",
                 "votos_csv": 36,
-                "votos_api": "34",
-                "porcentaje_api": "0,93%"
+                "votos_api": "42",
+                "porcentaje_api": "1,96%"
             },
             {
                 "municipio": "SARDINATA",
@@ -4895,8 +5069,8 @@
             {
                 "municipio": "BUENAVISTA",
                 "votos_csv": 54,
-                "votos_api": "38",
-                "porcentaje_api": "0,73%"
+                "votos_api": "50",
+                "porcentaje_api": "3,27%"
             },
             {
                 "municipio": "CALARCA",
@@ -4978,8 +5152,8 @@
             {
                 "municipio": "ALBANIA",
                 "votos_csv": 20,
-                "votos_api": "75",
-                "porcentaje_api": "0,75%"
+                "votos_api": "23",
+                "porcentaje_api": "1,14%"
             },
             {
                 "municipio": "ARATOCA",
@@ -5014,8 +5188,8 @@
             {
                 "municipio": "BOLIVAR",
                 "votos_csv": 35,
-                "votos_api": "126",
-                "porcentaje_api": "1,75%"
+                "votos_api": "48",
+                "porcentaje_api": "1,09%"
             },
             {
                 "municipio": "CABRERA",
@@ -5368,8 +5542,8 @@
             {
                 "municipio": "SAN ANDRES",
                 "votos_csv": 33,
-                "votos_api": "511",
-                "porcentaje_api": "3,04%"
+                "votos_api": "100",
+                "porcentaje_api": "4,47%"
             },
             {
                 "municipio": "SAN BENITO",
@@ -5416,8 +5590,8 @@
             {
                 "municipio": "SANTA BARBARA",
                 "votos_csv": 5,
-                "votos_api": "16",
-                "porcentaje_api": "1,03%"
+                "votos_api": "17",
+                "porcentaje_api": "1,10%"
             },
             {
                 "municipio": "SIMACOTA",
@@ -5440,8 +5614,8 @@
             {
                 "municipio": "SUCRE",
                 "votos_csv": 12,
-                "votos_api": "38",
-                "porcentaje_api": "0,39%"
+                "votos_api": "24",
+                "porcentaje_api": "0,81%"
             },
             {
                 "municipio": "SURATA",
@@ -5476,8 +5650,8 @@
             {
                 "municipio": "VILLANUEVA",
                 "votos_csv": 49,
-                "votos_api": "148",
-                "porcentaje_api": "1,48%"
+                "votos_api": "154",
+                "porcentaje_api": "3,08%"
             },
             {
                 "municipio": "ZAPATOCA",
@@ -5553,8 +5727,8 @@
             {
                 "municipio": "LA UNION",
                 "votos_csv": 64,
-                "votos_api": "601",
-                "porcentaje_api": "3,72%"
+                "votos_api": "32",
+                "porcentaje_api": "0,53%"
             },
             {
                 "municipio": "LOS PALMITOS",
@@ -5619,8 +5793,8 @@
             {
                 "municipio": "SAN PEDRO",
                 "votos_csv": 115,
-                "votos_api": "157",
-                "porcentaje_api": "1,90%"
+                "votos_api": "53",
+                "porcentaje_api": "0,57%"
             },
             {
                 "municipio": "SINCE",
@@ -5798,8 +5972,8 @@
             {
                 "municipio": "LIBANO",
                 "votos_csv": 439,
-                "votos_api": "2",
-                "porcentaje_api": "1,62%"
+                "votos_api": "418",
+                "porcentaje_api": "2,33%"
             },
             {
                 "municipio": "MARIQUITA",
@@ -5965,8 +6139,8 @@
             {
                 "municipio": "ARGELIA",
                 "votos_csv": 56,
-                "votos_api": "4",
-                "porcentaje_api": "50,00%"
+                "votos_api": "49",
+                "porcentaje_api": "1,79%"
             },
             {
                 "municipio": "BOLIVAR",
@@ -6085,8 +6259,8 @@
             {
                 "municipio": "LA VICTORIA",
                 "votos_csv": 136,
-                "votos_api": "0",
-                "porcentaje_api": "0%"
+                "votos_api": "122",
+                "porcentaje_api": "1,98%"
             },
             {
                 "municipio": "OBANDO",
@@ -6109,8 +6283,8 @@
             {
                 "municipio": "RESTREPO",
                 "votos_csv": 163,
-                "votos_api": "409",
-                "porcentaje_api": "3,51%"
+                "votos_api": "160",
+                "porcentaje_api": "2,03%"
             },
             {
                 "municipio": "RIOFRIO",
@@ -6251,8 +6425,8 @@
             {
                 "municipio": "ALBANIA",
                 "votos_csv": 23,
-                "votos_api": "75",
-                "porcentaje_api": "0,75%"
+                "votos_api": "45",
+                "porcentaje_api": "1,96%"
             },
             {
                 "municipio": "CARTAGENA DEL CHAIRA",
@@ -6287,8 +6461,8 @@
             {
                 "municipio": "PUERTO RICO",
                 "votos_csv": 118,
-                "votos_api": "70",
-                "porcentaje_api": "5,87%"
+                "votos_api": "158",
+                "porcentaje_api": "1,59%"
             },
             {
                 "municipio": "SAN VICENTE DEL CAGUAN",
@@ -6454,8 +6628,8 @@
             {
                 "municipio": "VILLANUEVA",
                 "votos_csv": 230,
-                "votos_api": "148",
-                "porcentaje_api": "1,48%"
+                "votos_api": "539",
+                "porcentaje_api": "2,74%"
             }
         ]
     },
@@ -6739,8 +6913,8 @@
             {
                 "municipio": "PUERTO RICO",
                 "votos_csv": 32,
-                "votos_api": "70",
-                "porcentaje_api": "5,87%"
+                "votos_api": "55",
+                "porcentaje_api": "1,12%"
             },
             {
                 "municipio": "RESTREPO",
@@ -6821,8 +6995,8 @@
             {
                 "municipio": "SAN ANDRES",
                 "votos_csv": 543,
-                "votos_api": "511",
-                "porcentaje_api": "3,04%"
+                "votos_api": "66",
+                "porcentaje_api": "1,73%"
             },
             {
                 "municipio": "PROVIDENCIA",
@@ -7056,7 +7230,7 @@
             }
         ]
     },
-    " CONSULADOS": {
+    "CONSULADOS": {
         "codigo_departamento_csv": "88",
         "municipios": [
             {
@@ -7522,8 +7696,8 @@
                     <td>${municipio}</td>
                     <td>${textoVotos2022}</td>
                     <td>${votos2026.toLocaleString('es-CO')}</td>
-                    <td><strong>${porcentaje2026}</strong></td>
                     <td>${htmlVariacion}</td>
+                    <td><strong>${porcentaje2026}</strong></td>
                 `;
                 tbody.appendChild(tr);
             });
